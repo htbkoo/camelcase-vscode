@@ -31,16 +31,40 @@ Example (`settings.json`):
 
 ## Development
 
-This repo uses [pnpm](https://pnpm.io/) (`packageManager` is pinned in `package.json` for [Corepack](https://nodejs.org/api/corepack.html)).
+Recommended: [pnpm](https://pnpm.io/). The `packageManager` field in `package.json` is for [Corepack](https://nodejs.org/api/corepack.html) when `corepack` is available; **you do not need Corepack** if you install pnpm some other way.
+
+### Installing pnpm (pick one)
+
+- **Volta** (common when `corepack` is missing from PATH):
+
+  ```bash
+  volta install pnpm@9.15.4
+  ```
+
+- **npm**:
+
+  ```bash
+  npm install -g pnpm
+  ```
+
+- **Corepack** (only if the `corepack` binary exists—try `which corepack`, or on some installs it lives next to `node`):
+
+  ```bash
+  corepack enable
+  corepack prepare pnpm@9.15.4 --activate
+  ```
+
+### Commands
 
 ```bash
-corepack enable
 pnpm install
 pnpm run compile
 pnpm test
 ```
 
-Press **F5** in VS Code/Cursor to launch the **Extension Development Host** (default build task: `pnpm run watch`).
+Using **npm** instead is fine: `npm install`, `npm run compile`, `npm test`, and `npx vsce package`.
+
+Press **F5** in VS Code/Cursor to launch the **Extension Development Host** (default build task runs the `watch` script via the **npm** task type, which works after either `pnpm install` or `npm install`).
 
 Package a `.vsix`:
 
@@ -49,7 +73,7 @@ pnpm run compile
 pnpm exec vsce package
 ```
 
-`npm` or `yarn` still work if you prefer; scripts call the local `tsc` / `vitest` / `vsce` binaries from `node_modules`.
+(or `npm run compile` and `npx vsce package`).
 
 ## Keybinding conflicts
 
