@@ -31,20 +31,25 @@ Example (`settings.json`):
 
 ## Development
 
+This repo uses [pnpm](https://pnpm.io/) (`packageManager` is pinned in `package.json` for [Corepack](https://nodejs.org/api/corepack.html)).
+
 ```bash
-npm install
-npm run compile
-npm test
+corepack enable
+pnpm install
+pnpm run compile
+pnpm test
 ```
 
-Press **F5** in VS Code/Cursor to launch the **Extension Development Host** (uses the default build task: `npm run watch`).
+Press **F5** in VS Code/Cursor to launch the **Extension Development Host** (default build task: `pnpm run watch`).
 
 Package a `.vsix`:
 
 ```bash
-npm run compile
-npx vsce package
+pnpm run compile
+pnpm exec vsce package
 ```
+
+`npm` or `yarn` still work if you prefer; scripts call the local `tsc` / `vitest` / `vsce` binaries from `node_modules`.
 
 ## Keybinding conflicts
 

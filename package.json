@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "publisher": "htbkoo",
   "license": "MIT",
+  "packageManager": "pnpm@9.15.4",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -68,9 +69,9 @@
   "scripts": {
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile",
+    "pretest": "tsc -p ./",
     "test": "vitest run",
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "tsc -p ./",
     "package": "vsce package"
   },
   "devDependencies": {
