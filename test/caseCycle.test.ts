@@ -76,7 +76,8 @@ describe("cycleText", () => {
   });
 
   it("applies first format when no variant matches", () => {
-    expect(cycleText("fooBar", order)?.next).toBe("foo-bar");
+    // Mixed case with separator: tokenizes to ["foo","bar"] but matches none of the six outputs exactly.
+    expect(cycleText("Foo_Bar", order)?.next).toBe("foo-bar");
   });
 
   it("returns null for empty", () => {
