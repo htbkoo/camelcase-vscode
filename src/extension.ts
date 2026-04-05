@@ -24,10 +24,10 @@ export function activate(context: vscode.ExtensionContext): void {
       let replacements = 0;
 
       for (const selection of editor.selections) {
-        let range: vscode.Range | undefined = selection;
+        let range: vscode.Range = selection;
         if (range.isEmpty) {
           const word = editor.document.getWordRangeAtPosition(
-            range.active
+            selection.active
           );
           if (!word) {
             continue;
