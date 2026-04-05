@@ -75,6 +75,8 @@ pnpm exec vsce package
 
 (or `npm run compile` and `npx vsce package`).
 
+The extension icon is [`images/icon.png`](images/icon.png), referenced from `package.json` as `"icon"`. For the marketplace, a **128×128** (or **256×256**) PNG is typical; replace that file if you want different artwork.
+
 ## Keybinding conflicts
 
 **Shift+Alt+U** may overlap with another extension or built-in command. If nothing happens, open **Keyboard Shortcuts**, search for `Cycle Case`, and assign a different key.
