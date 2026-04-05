@@ -77,7 +77,8 @@
     "pretest": "tsc -p ./",
     "test": "vitest run",
     "vscode:prepublish": "tsc -p ./",
-    "package": "vsce package"
+    "package": "vsce package",
+    "rebuild": "pnpm run compile && pnpm run package"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
