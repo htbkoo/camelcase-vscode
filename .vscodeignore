@@ -1,5 +1,7 @@
 .vscode/**
 .vscode-test/**
+.cursor/**
+
 src/**
 test/**
 **/*.map
@@ -8,3 +10,17 @@ test/**
 vitest.config.ts
 **/*.test.ts
 node_modules/**
+
+# Lockfiles (not needed at runtime; shrink VSIX)
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+npm-shrinkwrap.json
+
+# Built packages
+*.vsix
+
+# Unused icons
+images/icon-xl.png
+images/icon-transparent.png
+images/icon copy.png
