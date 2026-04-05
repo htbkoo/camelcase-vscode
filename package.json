@@ -1,0 +1,83 @@
+{
+  "name": "camelcase-vscode",
+  "displayName": "Camel Case",
+  "description": "Cycle selection or word through kebab-case, SCREAMING_SNAKE, PascalCase, camelCase, snake_case, and space case.",
+  "version": "0.1.0",
+  "publisher": "htbkoo",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "camelcase",
+    "case",
+    "rename",
+    "refactor"
+  ],
+  "activationEvents": [
+    "onCommand:camelcase.cycle"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "camelcase.cycle",
+        "title": "Cycle Case"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "camelcase.cycle",
+        "key": "shift+alt+u",
+        "mac": "shift+alt+u",
+        "when": "editorTextFocus && !editorReadonly"
+      }
+    ],
+    "configuration": {
+      "title": "Camel Case",
+      "properties": {
+        "camelcase.order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "kebab",
+              "screaming",
+              "pascal",
+              "camel",
+              "snake",
+              "space"
+            ]
+          },
+          "default": [
+            "kebab",
+            "screaming",
+            "pascal",
+            "camel",
+            "snake",
+            "space"
+          ],
+          "description": "Case variants to cycle through, in order. Omitted variants are skipped."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "vitest run",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.2",
+    "typescript": "^5.4.5",
+    "vitest": "^2.1.9"
+  }
+}
