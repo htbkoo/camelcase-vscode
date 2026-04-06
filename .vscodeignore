@@ -21,6 +21,4 @@ npm-shrinkwrap.json
 *.vsix
 
 # Unused icons
-images/icon-xl.png
-images/icon-transparent.png
-images/icon copy.png
+images/icon-*.png
