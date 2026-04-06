@@ -2,7 +2,7 @@
   "name": "camelcase-vscode",
   "displayName": "Camel Case",
   "description": "Cycle selection or word through kebab-case, SCREAMING_SNAKE, PascalCase, camelCase, snake_case, and space case.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "htbkoo",
   "icon": "images/icon.png",
   "license": "MIT",
